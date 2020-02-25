@@ -1,6 +1,6 @@
 Package: hueniverrrsity
-Title: What the Package Does (One Line, Title Case)
-Version: Make figures consistent with the visual identity of Canadian universities
+Title: Make figures consistent with the visual identity of Canadian universities
+Version: 0.0.0.9000
 Authors@R: 
     c(
     person("Moorhouse", "Evelyn", role = "aut"),
@@ -12,3 +12,6 @@ Description: Make figures consistent with the visual identity of Canadian univer
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.0.2
+Suggests: 
+    testthat (>= 2.1.0)
