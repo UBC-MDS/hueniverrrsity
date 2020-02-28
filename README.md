@@ -3,7 +3,7 @@ DSCI 524 Group 16 (Team Alan Turing) R package
 
 ### Summary
 
-### `hueniversitypy` in the Python ecosystem
+### `hueniverrrsity` in the Python ecosystem
 
 The hueniverrrsity package fits into the R ecosystem with other R packages that allow users to change the theme of ggplot2 objects. These types of packages allow general aesthetic theme changes or specific theme changes for a purpose. One of the most common packages of this type is [ggthemes](https://cran.r-project.org/web/packages/ggthemes/index.html), which allows users to select and apply different general themes to ggplot2 objects. Our package will be different than ggthemes as the goal of the change in plot theme is to adhere to certain university visual identities, rather than to generally change the colour and appearance of plots. 
 
