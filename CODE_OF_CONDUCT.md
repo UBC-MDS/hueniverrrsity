@@ -56,7 +56,8 @@ further defined and clarified by project maintainers.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting the project team at evelyn.moorhouse@mail.utoronto.ca, 
-reiko.okamoto17@gmail.com, or vermashivam679@gmail.com. All
+reiko.okamoto17@gmail.com,
+simardeep.kaur.jeji@gmail.com, or vermashivam679@gmail.com. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
