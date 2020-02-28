@@ -3,7 +3,7 @@
 #' @param colour_use either 'fill' or 'colour' depending on how the colour will be displayed.
 #'
 #' @description: theme_ubc() creates a theme using the University of British Columbia's visual identity
-#' to be used with ggplot2. See the isual identity at https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/
+#' to be used with ggplot2. See the visual identity at https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/
 #'
 #' @usage: ggplot(data, aes(x, y, colour = class)) + theme_ubc('colour')
 #'
