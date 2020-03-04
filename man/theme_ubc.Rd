@@ -18,11 +18,7 @@ to be used with ggplot2. See the visual identity at https://brand.ubc.ca/guideli
 }
 \examples{
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_ubc(colour_use = 'fill')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_ubc('fill')}
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_ubc(colour_use = 'colour')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
 }
