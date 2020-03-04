@@ -12,13 +12,9 @@
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_ubc(colour_use = 'fill')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_ubc('fill')}
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_ubc(colour_use = 'colour')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
 theme_ubc <- function(colour_use, colour_palette) {
 
   new <- theme_bw() +

@@ -20,11 +20,7 @@ to be used with ggplot2. See the visual identity at https://tinyurl.com/t3jjr49
 }
 \examples{
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_toronto(colour_use = 'fill', colour_palette = 'vibrant')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_toronto('fill', 'vibrant')}
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_toronto(colour_use = 'colour', colour_palette = 'vibrant')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_toronto('colour', 'vibrant')}
 }

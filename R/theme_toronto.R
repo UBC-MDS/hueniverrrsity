@@ -13,13 +13,9 @@
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_toronto(colour_use = 'fill', colour_palette = 'vibrant')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_toronto('fill', 'vibrant')}
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_toronto(colour_use = 'colour', colour_palette = 'vibrant')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_toronto('colour', 'vibrant')}
 theme_toronto <- function(colour_use, colour_palette){
   new <- theme_bw() +
     theme(plot.title = element_text(size=14),
@@ -29,17 +25,17 @@ theme_toronto <- function(colour_use, colour_palette){
           axis.text.y = element_text(size=11),
           legend.title = element_text(size=12),
           legend.text = element_text(size=11))
-  
+
   theme_set(new)
-  
+
   # Initialize colour palettes
   vibrant <- c('#002A5C', '#FFE498', '#008BB0', '#E31837')
-  
+
   cool <- c('#002A5C', '#7BA4D9', '#008BB0', '#DAE5CD')
-  
+
   awards <- c('#002A5C', '#FFE498', '#CECFCB', '#271100')
-  
-  
+
+
   if (colour_use %in% c('fill', 'colour')) {
     if (colour_palette == 'vibrant') {
       scale_discrete_manual(values = vibrant, aesthetics = colour_use)

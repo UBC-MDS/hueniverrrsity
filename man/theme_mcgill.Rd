@@ -18,11 +18,7 @@ to be used with ggplot2. See the visual identity at https://www.mcgill.ca/visual
 }
 \examples{
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_mcgill(colour_use = 'fill')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_mcgill('fill')}
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_mcgill(colour_use = 'colour')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_mcgill('colour')}
 }

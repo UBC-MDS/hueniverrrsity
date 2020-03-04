@@ -13,13 +13,9 @@
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_alberta(colour_use = 'fill', colour_palette = 'alpha')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_alberta('fill', 'alpha')}
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_toronto(colour_use = 'colour', colour_palette = 'alpha')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_alberta('colour', 'alpha')}
 theme_alberta <- function(colour_use, colour_palette) {
 
   new <- theme_bw() +
@@ -52,7 +48,7 @@ theme_alberta <- function(colour_use, colour_palette) {
     } else if (colour_palette == 'delta') {
       scale_discrete_manual(values = delta, aesthetics = colour_use)
     } else {
-      stop("colour_palette should be one of 'alpha', 'beta', 'gamma' or 'delta'")
+      stop("colour_palette should be one of 'alpha', 'beta', 'gamma', or 'delta'")
     }
   } else
     stop("colour_use should be either 'fill' or 'colour'")
