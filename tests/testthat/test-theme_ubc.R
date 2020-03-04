@@ -1,36 +1,45 @@
+require(testthat)
+require(ggplot2)
+
 test_that("Testing", {
 
-	# TODO: Here the actual function `theme_ubc()` will come
-	th <- theme_bw() + theme(text = element_text(family="sans", size=12), 
-		axis.title.x = element_text(size=13), 
-		axis.title.y = element_text(size=14), 
-		axis.text.x = element_text(size=15), 
-		axis.text.y = element_text(size=16), 
-		legend.text = element_text(size=17), 
-		legend.title = element_text(size=18),
-		plot.title = element_text(size=19),
-		plot.caption = element_text(size=20))
+	alpha <- c('#007C41', '#FFDB05', '#7D9AAA', '#A8B400', '#A79E70')
+	beta <- c('#007C41', '#FFDB05', '#7CA295', '#E0D760', '#C7D28A')
+	gamma <- c('#007C41', '#FFDB05', '#3CB6CE', '#A3A86B', '#7AB800')
+	delta <- c('#007C41', '#FFDB05', '#D4BA00', '#6773B6', '#2A6EBB')
+
+	# Testing colour use & colour palette
+	temp <- theme_ubc('colour', 'alpha')
+	expect_equal(temp$palette(0), alpha)
+	expect_equal(temp$aesthetics, 'colour')
+	
+	temp <- theme_ubc('fill', 'beta')
+	expect_equal(temp$palette(0), beta)
+	expect_equal(temp$aesthetics, 'fill')
+
+	temp <- theme_ubc('colour', 'gamma')
+	expect_equal(temp$palette(0), gamma)
+	expect_equal(temp$aesthetics, 'colour')
+
+	temp <- theme_ubc('fill', 'delta')
+	expect_equal(temp$palette(0), delta)
+	expect_equal(temp$aesthetics, 'fill')
+
+	th <- theme_get()
 
 	# testing theme is a theme object
 	expect_equal(sum(class(th)==c("theme", "gg")), 2)
 
-	# testing 
-	expect_equal(th$text$size, 12)
-	expect_equal(th$axis.title.x$size, 13)
-	expect_equal(th$axis.title.y$size, 14)
+	# testing font size
+	expect_equal(th$axis.title.x$size, 12)
+	expect_equal(th$axis.title.y$size, 12)
 
-	expect_equal(th$axis.text.x$size, 15)
-	expect_equal(th$axis.text.y$size, 16)
+	expect_equal(th$axis.text.x$size, 11)
+	expect_equal(th$axis.text.y$size, 11)
 
-	expect_equal(th$legend.text$size, 17)
-	expect_equal(th$legend.title$size, 18)
+	expect_equal(th$legend.text$size, 11)
+	expect_equal(th$legend.title$size, 12)
 
-	expect_equal(th$plot.title$size, 19)
-	expect_equal(th$plot.caption$size, 20)
-
-	# testing the UBC font ("sans") because text does it all
-	expect_equal(th$text$family, "sans")
-
-	# TODO: colour testing need to add
+	expect_equal(th$plot.title$size, 14)
 
 })
