@@ -15,7 +15,7 @@
 #' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_ubc('fill')}
 #'
 #' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
-theme_ubc <- function(colour_use, colour_palette) {
+theme_ubc <- function(colour_use) {
 
   new <- theme_bw() +
     theme(plot.title = element_text(size=14),
@@ -29,26 +29,10 @@ theme_ubc <- function(colour_use, colour_palette) {
   theme_set(new)
 
   # Initialize colour palettes
-  alpha <- c('#007C41', '#FFDB05', '#7D9AAA', '#A8B400', '#A79E70')
-
-  beta <- c('#007C41', '#FFDB05', '#7CA295', '#E0D760', '#C7D28A')
-
-  gamma <- c('#007C41', '#FFDB05', '#3CB6CE', '#A3A86B', '#7AB800')
-
-  delta <- c('#007C41', '#FFDB05', '#D4BA00', '#6773B6', '#2A6EBB')
+  palette <- c('#002145', '#0055B7', '#00A7E1', '#40B4E5', '#6EC4E8', '#97D4E9')
 
   if (colour_use %in% c('fill', 'colour')) {
-    if (colour_palette == 'alpha') {
-      scale_discrete_manual(values = alpha, aesthetics = colour_use)
-    } else if (colour_palette == 'beta') {
-      scale_discrete_manual(values = beta, aesthetics = colour_use)
-    } else if (colour_palette == 'gamma') {
-      scale_discrete_manual(values = gamma, aesthetics = colour_use)
-    } else if (colour_palette == 'delta') {
-      scale_discrete_manual(values = delta, aesthetics = colour_use)
-    } else {
-      stop("colour_palette should be one of 'alpha', 'beta', 'gamma' or 'delta'")
-    }
+    scale_discrete_manual(values = palette, aesthetics = colour_use)
   } else
     stop("colour_use should be either 'fill' or 'colour'")
 }
