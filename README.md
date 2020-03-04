@@ -15,15 +15,15 @@ their institution’s visual identity guidelines. For example, on the
 [*Students and
 Alumni*](https://masterdatascience.ubc.ca/why-ubc/students-alumni) page
 of UBC Master of Data Science website, the visualizations all adhere to
-the colour palette specified by the UBC’s visual identity guideline.
+the colour palette specified by UBC’s visual identity guideline.
 
 This R package allows users to apply university-specific themes to
 ggplot2 objects. This package currently supports the official colour
 palettes of four institutions belonging to the U15 Group of Canadian
-Research Universities: University of Alberta, the University of British
-Columbia, McGill University, and the University of Toronto. In the
-future, we hope to extend this package to support the visual identities
-of all universities in the association.
+Research Universities: the University of Alberta, the University of
+British Columbia, McGill University, and the University of Toronto. In
+the future, we hope to extend this package to support the visual
+identities of all universities in the association.
 
 ### Functions used in the package
 
