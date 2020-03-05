@@ -1,29 +1,19 @@
 require(testthat)
 require(ggplot2)
 
-test_that("Testing", {
+test_that("Test theme_ubc", {
 
-	alpha <- c('#007C41', '#FFDB05', '#7D9AAA', '#A8B400', '#A79E70')
-	beta <- c('#007C41', '#FFDB05', '#7CA295', '#E0D760', '#C7D28A')
-	gamma <- c('#007C41', '#FFDB05', '#3CB6CE', '#A3A86B', '#7AB800')
-	delta <- c('#007C41', '#FFDB05', '#D4BA00', '#6773B6', '#2A6EBB')
+	palette <- c('#002145', '#0055B7', '#00A7E1', '#40B4E5', '#6EC4E8', '#97D4E9')
 
 	# Testing colour use & colour palette
-	temp <- theme_ubc('colour', 'alpha')
-	expect_equal(temp$palette(0), alpha)
+	temp <- theme_ubc('colour')
+	expect_equal(temp$palette(0), palette)
 	expect_equal(temp$aesthetics, 'colour')
 	
-	temp <- theme_ubc('fill', 'beta')
-	expect_equal(temp$palette(0), beta)
+	temp <- theme_ubc('fill')
+	expect_equal(temp$palette(0), palette)
 	expect_equal(temp$aesthetics, 'fill')
 
-	temp <- theme_ubc('colour', 'gamma')
-	expect_equal(temp$palette(0), gamma)
-	expect_equal(temp$aesthetics, 'colour')
-
-	temp <- theme_ubc('fill', 'delta')
-	expect_equal(temp$palette(0), delta)
-	expect_equal(temp$aesthetics, 'fill')
 
 	th <- theme_get()
 
