@@ -1,51 +1,35 @@
-<<<<<<< HEAD
 require(testthat)
 require(ggplot2)
 
 test_that("Test theme_mcgill", {
   
-  alpha <- c('#007C41', '#FFDB05', '#7D9AAA', '#A8B400', '#A79E70')
-  beta <- c('#007C41', '#FFDB05', '#7CA295', '#E0D760', '#C7D28A')
-  gamma <- c('#007C41', '#FFDB05', '#3CB6CE', '#A3A86B', '#7AB800')
-  delta <- c('#007C41', '#FFDB05', '#D4BA00', '#6773B6', '#2A6EBB')
+  palette <- c('#ED1B2F','#FFD794','#B5E1E1','#C8EAF5','#D5E6A8')
   
   # testing colour_use & colour_palette
-  temp <- theme_alberta('colour', 'alpha')
-  expect_equal(temp$palette(0), alpha)
+  temp <- theme_mcgill('colour')
+  expect_equal(temp$palette(0), palette)
   expect_equal(temp$aesthetics, 'colour')
   
-  temp <- theme_alberta('fill', 'beta')
-  expect_equal(temp$palette(0), beta)
+  temp <- theme_mcgill('fill')
+  expect_equal(temp$palette(0), palette)
   expect_equal(temp$aesthetics, 'fill')
   
-  temp <- theme_alberta('colour', 'gamma')
-  expect_equal(temp$palette(0), gamma)
-  expect_equal(temp$aesthetics, 'colour')
+  th <- theme_get()
   
-  temp <- theme_alberta('fill', 'delta')
-  expect_equal(temp$palette(0), delta)
-  expect_equal(temp$aesthetics, 'fill')
-  
-  current_theme <- theme_get()
-  
-  # testing current theme is a theme object
-  expect_equal(sum(class(current_theme)==c("theme", "gg")), 2)
+  # testing theme is a theme object
+  expect_equal(sum(class(th)==c("theme", "gg")), 2)
   
   # testing font size
-  expect_equal(current_theme$axis.title.x$size, 12)
-  expect_equal(current_theme$axis.title.y$size, 12)
+  expect_equal(th$axis.title.x$size, 12)
+  expect_equal(th$axis.title.y$size, 12)
   
-  expect_equal(current_theme$axis.text.x$size, 11)
-  expect_equal(current_theme$axis.text.y$size, 11)
+  expect_equal(th$axis.text.x$size, 11)
+  expect_equal(th$axis.text.y$size, 11)
   
-  expect_equal(current_theme$legend.title$size, 12)
-  expect_equal(current_theme$legend.text$size, 11)
+  expect_equal(th$legend.text$size, 11)
+  expect_equal(th$legend.title$size, 12)
   
-  expect_equal(current_theme$plot.title$size, 14)
-  
+  expect_equal(th$plot.title$size, 14) 
 })
-=======
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
-})
->>>>>>> 8c0c2a14c5f1e6afd8d867fec6a397cea6628773
+
+
