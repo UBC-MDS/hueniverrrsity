@@ -12,13 +12,27 @@
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_ubc(colour_use = 'fill')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_ubc('fill')}
 #'
-#' \dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-#'      + geom_bar(stat = 'identity')
-#'      + theme_ubc(colour_use = 'colour')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
 theme_ubc <- function(colour_use) {
 
+  new <- theme_bw() +
+    theme(plot.title = element_text(size=14),
+          axis.title.x = element_text(size=12),
+          axis.text.x = element_text(size=11),
+          axis.title.y = element_text(size=12),
+          axis.text.y = element_text(size=11),
+          legend.title = element_text(size=12),
+          legend.text = element_text(size=11))
+
+  theme_set(new)
+
+  # Initialize colour palettes
+  palette <- c('#002145', '#0055B7', '#00A7E1', '#40B4E5', '#6EC4E8', '#97D4E9')
+
+  if (colour_use %in% c('fill', 'colour')) {
+    scale_discrete_manual(values = palette, aesthetics = colour_use)
+  } else
+    stop("colour_use should be either 'fill' or 'colour'")
 }

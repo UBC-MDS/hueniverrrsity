@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require(testthat)
 require(ggplot2)
 
@@ -43,3 +44,8 @@ test_that("Test theme_mcgill", {
   expect_equal(current_theme$plot.title$size, 14)
   
 })
+=======
+test_that("multiplication works", {
+  expect_equal(2 * 2, 4)
+})
+>>>>>>> 8c0c2a14c5f1e6afd8d867fec6a397cea6628773

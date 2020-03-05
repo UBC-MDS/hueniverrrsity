@@ -14,15 +14,11 @@ reformatted plot with UBC's visual identity theme.
 }
 \description{
 : theme_ubc() creates a theme using the University of British Columbia's visual identity
-to be used with ggplot2. See the isual identity at https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/
+to be used with ggplot2. See the visual identity at https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/
 }
 \examples{
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, fill = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_ubc(colour_use = 'fill')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_ubc('fill')}
 
-\dontrun{ggplot(students_admissions, aes(x = high_gpa, y = department, colour = as.factor(department)))
-     + geom_bar(stat = 'identity')
-     + theme_ubc(colour_use = 'colour')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
 }
