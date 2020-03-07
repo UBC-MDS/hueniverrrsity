@@ -32,4 +32,7 @@ test_that("Test theme_ubc", {
 
 	expect_equal(th$plot.title$size, 14)
 
+	# Testing code defensively (checking correct error messages are displayes)
+	expect_error(temp <- theme_ubc('color'), "colour_use should be either 'fill' or 'colour'")
+
 })

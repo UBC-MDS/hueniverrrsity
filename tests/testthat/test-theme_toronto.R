@@ -36,5 +36,10 @@ test_that("Test theme_toronto", {
   expect_equal(current_theme$legend.text$size, 11)
   
   expect_equal(current_theme$plot.title$size, 14)
-  
+
+  # Testing code defensively (checking correct error messages are displayes)
+  expect_error(temp <- theme_toronto('colour', 'random'), "colour_palette should be one of 'vibrant', 'cool', or 'awards'")
+  expect_error(temp <- theme_toronto('color', 'awards'), "colour_use should be either 'fill' or 'colour'")
+
+
 })
