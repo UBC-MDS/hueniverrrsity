@@ -13,8 +13,24 @@ test_that("Test theme_alberta", {
   expect_equal(temp$palette(0), alpha)
   expect_equal(temp$aesthetics, 'colour')
 
+  temp <- theme_alberta('fill', 'alpha')
+  expect_equal(temp$palette(0), alpha)
+  expect_equal(temp$aesthetics, 'fill')
+
+  temp <- theme_alberta('colour', 'beta')
+  expect_equal(temp$palette(0), beta)
+  expect_equal(temp$aesthetics, 'colour')
+
   temp <- theme_alberta('fill', 'beta')
   expect_equal(temp$palette(0), beta)
+  expect_equal(temp$aesthetics, 'fill')
+
+  temp <- theme_alberta('colour', 'gamma')
+  expect_equal(temp$palette(0), gamma)
+  expect_equal(temp$aesthetics, 'colour')
+
+  temp <- theme_alberta('fill', 'gamma')
+  expect_equal(temp$palette(0), gamma)
   expect_equal(temp$aesthetics, 'fill')
 
   temp <- theme_alberta('colour', 'gamma')
@@ -27,8 +43,8 @@ test_that("Test theme_alberta", {
 
   current_theme <- theme_get()
 
-  # testing current theme is a theme object
-  expect_equal(sum(class(current_theme)==c("theme", "gg")), 2)
+  # testing that current theme is a theme object
+  expect_equal(sum(class(current_theme) == c("theme", "gg")), 2)
 
   # testing font size
   expect_equal(current_theme$axis.title.x$size, 12)
