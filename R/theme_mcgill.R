@@ -17,13 +17,13 @@
 #' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_mcgill('colour')}
 theme_mcgill <- function(colour_use) {
   new <- ggplot2::theme_bw() +
-    ggplot2::theme(plot.title = element_text(size=14),
-          axis.title.x = element_text(size=12),
-          axis.text.x = element_text(size=11),
-          axis.title.y = element_text(size=12),
-          axis.text.y = element_text(size=11),
-          legend.title = element_text(size=12),
-          legend.text = element_text(size=11))
+    ggplot2::theme(plot.title = ggplot2::element_text(size=14),
+          axis.title.x = ggplot2::element_text(size=12),
+          axis.text.x = ggplot2::element_text(size=11),
+          axis.title.y = ggplot2::element_text(size=12),
+          axis.text.y = ggplot2::element_text(size=11),
+          legend.title = ggplot2::element_text(size=12),
+          legend.text = ggplot2::element_text(size=11))
 
   ggplot2::theme_set(new)
 
