@@ -13,21 +13,25 @@
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_alberta('fill', 'alpha')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species)))
+#' + geom_boxplot()
+#' + theme_alberta('fill', 'alpha')}
 #'
-#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_alberta('colour', 'alpha')}
+#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species)))
+#' + geom_point()
+#' + theme_alberta('colour', 'alpha')}
 theme_alberta <- function(colour_use, colour_palette) {
 
-  new <- theme_bw() +
-    theme(plot.title = element_text(size=14),
-          axis.title.x = element_text(size=12),
-          axis.text.x = element_text(size=11),
-          axis.title.y = element_text(size=12),
-          axis.text.y = element_text(size=11),
-          legend.title = element_text(size=12),
-          legend.text = element_text(size=11))
+  new <- ggplot2::theme_bw() +
+    ggplot2::theme(plot.title =  ggplot2::element_text(size=14),
+          axis.title.x =  ggplot2::element_text(size=12),
+          axis.text.x =  ggplot2::element_text(size=11),
+          axis.title.y =  ggplot2::element_text(size=12),
+          axis.text.y =  ggplot2::element_text(size=11),
+          legend.title =  ggplot2::element_text(size=12),
+          legend.text =  ggplot2::element_text(size=11))
 
-  theme_set(new)
+  ggplot2::theme_set(new)
 
   # Initialize colour palettes
   alpha <- c('#007C41', '#FFDB05', '#7D9AAA', '#A8B400', '#A79E70')
@@ -40,13 +44,13 @@ theme_alberta <- function(colour_use, colour_palette) {
 
   if (colour_use %in% c('fill', 'colour')) {
     if (colour_palette == 'alpha') {
-      scale_discrete_manual(values = alpha, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = alpha, aesthetics = colour_use)
     } else if (colour_palette == 'beta') {
-      scale_discrete_manual(values = beta, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = beta, aesthetics = colour_use)
     } else if (colour_palette == 'gamma') {
-      scale_discrete_manual(values = gamma, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = gamma, aesthetics = colour_use)
     } else if (colour_palette == 'delta') {
-      scale_discrete_manual(values = delta, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = delta, aesthetics = colour_use)
     } else {
       stop("colour_palette should be one of 'alpha', 'beta', 'gamma', or 'delta'")
     }

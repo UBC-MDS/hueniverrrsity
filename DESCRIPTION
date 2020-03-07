@@ -3,15 +3,25 @@ Title: Make figures consistent with the visual identity of Canadian universities
 Version: 0.0.0.9000
 Authors@R: 
     c(
-    person("Moorhouse", "Evelyn", role = "aut"),
-    person("Kaur", "Simardeep", role = "aut"),
-    person("Okamoto", "Reiko", role = "aut"),
-    person("Verma", "Shivam", role = "aut")
+    person("Moorhouse", "Evelyn", 
+            email = "evelyn.moorhouse@mail.utoronto.ca",
+            role = "aut"),
+    person("Kaur", "Simardeep", 
+            email = "simardeep.kaur.jeji@gmail.com",
+            role = "aut"),
+    person("Okamoto", "Reiko", 
+            email = "reiko.okamoto17@gmail.com",
+            role = c("aut", "cre")),
+    person("Verma", "Shivam",
+            email = "vermashivam679@gmail.com",
+            role = "aut")
     )
-Description: Make figures consistent with the visual identity of Canadian universities
+Description: Make figures consistent with the visual identity of Canadian universities.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0)
+Imports: 
+    ggplot2
