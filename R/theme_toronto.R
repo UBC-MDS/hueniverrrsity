@@ -18,15 +18,15 @@
 #' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_toronto('colour', 'vibrant')}
 theme_toronto <- function(colour_use, colour_palette){
   new <- ggplot2::theme_bw() +
-    theme(plot.title = element_text(size=14),
-          axis.title.x = element_text(size=12),
-          axis.text.x = element_text(size=11),
-          axis.title.y = element_text(size=12),
-          axis.text.y = element_text(size=11),
-          legend.title = element_text(size=12),
-          legend.text = element_text(size=11))
+    ggplot2::theme(plot.title = ggplot2::element_text(size=14),
+          axis.title.x = ggplot2::element_text(size=12),
+          axis.text.x = ggplot2::element_text(size=11),
+          axis.title.y = ggplot2::element_text(size=12),
+          axis.text.y = ggplot2::element_text(size=11),
+          legend.title = ggplot2::element_text(size=12),
+          legend.text = ggplot2::element_text(size=11))
 
-  theme_set(new)
+  ggplot2::theme_set(new)
 
   # Initialize colour palettes
   vibrant <- c('#002A5C', '#FFE498', '#008BB0', '#E31837')
@@ -38,11 +38,11 @@ theme_toronto <- function(colour_use, colour_palette){
 
   if (colour_use %in% c('fill', 'colour')) {
     if (colour_palette == 'vibrant') {
-      scale_discrete_manual(values = vibrant, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = vibrant, aesthetics = colour_use)
     } else if (colour_palette == 'cool') {
-      scale_discrete_manual(values = cool, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = cool, aesthetics = colour_use)
     } else if (colour_palette == 'awards') {
-      scale_discrete_manual(values = awards, aesthetics = colour_use)
+      ggplot2::scale_discrete_manual(values = awards, aesthetics = colour_use)
     } else {
       stop("colour_palette should be one of 'vibrant', 'cool', or 'awards'")
     }

@@ -12,6 +12,14 @@ test_that("Test theme_toronto", {
   expect_equal(temp$palette(0), vibrant)
   expect_equal(temp$aesthetics, 'colour')
   
+  temp <- theme_toronto('fill', 'vibrant')
+  expect_equal(temp$palette(0), vibrant)
+  expect_equal(temp$aesthetics, 'fill')
+  
+  temp <- theme_toronto('colour', 'cool')
+  expect_equal(temp$palette(0), cool)
+  expect_equal(temp$aesthetics, 'colour')
+  
   temp <- theme_toronto('fill', 'cool')
   expect_equal(temp$palette(0), cool)
   expect_equal(temp$aesthetics, 'fill')
@@ -19,6 +27,10 @@ test_that("Test theme_toronto", {
   temp <- theme_toronto('colour', 'awards')
   expect_equal(temp$palette(0), awards)
   expect_equal(temp$aesthetics, 'colour')
+  
+  temp <- theme_toronto('fill', 'awards')
+  expect_equal(temp$palette(0), awards)
+  expect_equal(temp$aesthetics, 'fill')
   
   current_theme <- theme_get()
   

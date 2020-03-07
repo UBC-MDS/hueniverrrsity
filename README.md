@@ -76,13 +76,13 @@ Input:
 
 Available palettes:
 
-`alpha` <img src="imgs/alberta_1.png" width="33%" />
+`alpha` <img src="imgs/alberta_1.PNG" width="33%" />
 
-`beta` <img src="imgs/alberta_2.png" width="33%" />
+`beta` <img src="imgs/alberta_2.PNG" width="33%" />
 
-`gamma` <img src="imgs/alberta_3.png" width="33%" />
+`gamma` <img src="imgs/alberta_3.PNG" width="33%" />
 
-`delta` <img src="imgs/alberta_4.png" width="33%" />
+`delta` <img src="imgs/alberta_4.PNG" width="33%" />
 
 Output:
 
@@ -139,11 +139,11 @@ Input:
 
 Available palettes:
 
-`vibrant` <img src="imgs/toronto_vibrant.png" width="25%" />
+`vibrant` <img src="imgs/toronto_vibrant.PNG" width="25%" />
 
-`cool` <img src="imgs/toronto_cool.png" width="25%" />
+`cool` <img src="imgs/toronto_cool.PNG" width="25%" />
 
-`awards` <img src="imgs/toronto_awards.png" width="25%" />
+`awards` <img src="imgs/toronto_awards.PNG" width="25%" />
 
 Output:
 
