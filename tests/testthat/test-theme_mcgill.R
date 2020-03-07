@@ -30,6 +30,11 @@ test_that("Test theme_mcgill", {
   expect_equal(th$legend.title$size, 12)
   
   expect_equal(th$plot.title$size, 14) 
+
+  # Testing code defensively (checking correct error messages are displayes)
+  expect_error(temp <- theme_mcgill('color'), "colour_use should be either 'fill' or 'colour'")
+
+
 })
 
 

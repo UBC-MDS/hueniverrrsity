@@ -33,8 +33,8 @@ test_that("Test theme_alberta", {
   expect_equal(temp$palette(0), gamma)
   expect_equal(temp$aesthetics, 'fill')
 
-  temp <- theme_alberta('colour', 'gamma')
-  expect_equal(temp$palette(0), gamma)
+  temp <- theme_alberta('colour', 'delta')
+  expect_equal(temp$palette(0), delta)
   expect_equal(temp$aesthetics, 'colour')
 
   temp <- theme_alberta('fill', 'delta')
@@ -57,5 +57,9 @@ test_that("Test theme_alberta", {
   expect_equal(current_theme$legend.text$size, 11)
 
   expect_equal(current_theme$plot.title$size, 14)
+
+  # Testing code defensively (checking correct error messages are displayes)
+  expect_error(temp <- theme_alberta('colour', 'epsilon'), "colour_palette should be one of 'alpha', 'beta', 'gamma', or 'delta'")
+  expect_error(temp <- theme_alberta('color', 'alpha'), "colour_use should be either 'fill' or 'colour'")
 
 })
