@@ -17,7 +17,7 @@
 #' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
 theme_ubc <- function(colour_use) {
 
-  new <- theme_bw() +
+  new <- ggplot2::theme_bw() +
     theme(plot.title = element_text(size=14),
           axis.title.x = element_text(size=12),
           axis.text.x = element_text(size=11),

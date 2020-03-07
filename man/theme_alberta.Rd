@@ -20,7 +20,11 @@ to be used with ggplot2. See the visual identity at https://www.ualberta.ca/tool
 }
 \examples{
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_alberta('fill', 'alpha')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species)))
++ geom_boxplot()
++ theme_alberta('fill', 'alpha')}
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_alberta('colour', 'alpha')}
+\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species)))
++ geom_point()
++ theme_alberta('colour', 'alpha')}
 }
