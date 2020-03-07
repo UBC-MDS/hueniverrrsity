@@ -18,21 +18,21 @@
 theme_ubc <- function(colour_use) {
 
   new <- ggplot2::theme_bw() +
-    theme(plot.title = element_text(size=14),
-          axis.title.x = element_text(size=12),
-          axis.text.x = element_text(size=11),
-          axis.title.y = element_text(size=12),
-          axis.text.y = element_text(size=11),
-          legend.title = element_text(size=12),
-          legend.text = element_text(size=11))
+    ggplot2::theme(plot.title = ggplot2::element_text(size=14),
+          axis.title.x = ggplot2::element_text(size=12),
+          axis.text.x = ggplot2::element_text(size=11),
+          axis.title.y = ggplot2::element_text(size=12),
+          axis.text.y = ggplot2::element_text(size=11),
+          legend.title = ggplot2::element_text(size=12),
+          legend.text = ggplot2::element_text(size=11))
 
-  theme_set(new)
+  ggplot2::theme_set(new)
 
   # Initialize colour palettes
   palette <- c('#002145', '#0055B7', '#00A7E1', '#40B4E5', '#6EC4E8', '#97D4E9')
 
   if (colour_use %in% c('fill', 'colour')) {
-    scale_discrete_manual(values = palette, aesthetics = colour_use)
+    ggplot2::scale_discrete_manual(values = palette, aesthetics = colour_use)
   } else
     stop("colour_use should be either 'fill' or 'colour'")
 }
