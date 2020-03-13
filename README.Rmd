@@ -19,8 +19,10 @@ knitr::opts_chunk$set(
 ```
 
 # hueniverrrsity
-
 <!-- badges: start -->
+[![R build status](https://github.com/UBC-MDS/hueniverrrsity/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/hueniverrrsity/actions)
+
+[![codecov](https://codecov.io/gh/UBC-MDS/hueniverrrsity/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/hueniverrrsity)
 <!-- badges: end -->
 
 A visual identity allows an organization to be instantly recognizable. Comprised of their logo, typeface, and colours, it is applied when creating external or internal communications. At universities, staff create visualizations that adhere to the colour palette specified by their institution's visual identity guidelines. For example, on the [*Students and Alumni*](https://masterdatascience.ubc.ca/why-ubc/students-alumni) page of UBC Master of Data Science website, the visualizations all adhere to the colour palette specified by UBC's visual identity guideline. 
