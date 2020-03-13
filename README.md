@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/UBC-MDS/hueniverrrsity/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/hueniverrrsity/actions)
+
+[![codecov](https://codecov.io/gh/UBC-MDS/hueniverrrsity/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/hueniverrrsity)
 <!-- badges: end -->
 
 A visual identity allows an organization to be instantly recognizable.

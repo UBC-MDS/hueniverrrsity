@@ -24,7 +24,10 @@ RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 Imports: 
     ggplot2
 VignetteBuilder: knitr
+URL: https://github.com/UBC-MDS/hueniverrrsity
+BugReports: https://github.com/UBC-MDS/hueniverrrsity/issues
