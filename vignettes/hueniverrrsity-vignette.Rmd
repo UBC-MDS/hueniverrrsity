@@ -17,3 +17,117 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(hueniverrrsity)
 ```
+
+# Introduction
+
+All universities or colleges have a visual identity defined by specific colours and fonts. This enables all publications from a given university to have a cohesive theme and be immediatley identifiable. 
+
+[hueniverrrsity](https://github.com/UBC-MDS/hueniversitypy) is a package designed to apply the visual themes of four Canadian Universities to ggplot2 objects, McGill University, University of Toronto, University of Alberta and the University of British Columbia. 
+
+## hueniverrrsity Functions
+
+* `theme_alberta()` - Applies the U of A visual identity to ggplot2 objects.
+  Input:
+
+  - `colour_use`: `fill` or `colour`
+      - `colour_use = colour` for `geom_point()` and `geom_line()`
+      - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
+        `geom_violin()` and `geom_histogram()`
+  - `colour_palette`: `alpha`, `beta`, `gamma` or `delta`
+    colour palettes are different colour combinations specified in the U of A visual identity
+
+* `theme_mcgill()` - Applies the McGill visual identity to ggplot2 objects.
+
+  Input:
+
+  - `colour_use`: `fill` or `colour`
+      - `colour_use = colour` for `geom_point()` and `geom_line()`
+      - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
+        `geom_violin()` and `geom_histogram()`
+
+* `theme_toronto()` - Applies the U of T visual identity to ggplot2 objects.
+
+  Input:
+
+  - `colour_use`: `fill` or `colour`
+      - `colour_use = colour` for `geom_point()` and `geom_line()`
+      - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
+        `geom_violin()` and `geom_histogram()`
+  - `colour_palette`: `vibrant`, `cool` or `awards`
+    colour palettes are different colour combinations specified in the U of T visual identity
+
+* `theme_ubc()` - Applies the UBC visual identity to ggplot2 objects.
+  
+  Input:
+
+  - `colour_use`: `fill` or `colour`
+      - `colour_use = colour` for `geom_point()` and `geom_line()`
+      - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
+        `geom_violin()` and `geom_histogram()`
+        
+## Examples
+
+- `theme_alberta()`
+
+``` r
+# Create scatter plot
+a1 <- ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
+  theme_alberta('colour', 'beta')
+
+# Create density plot
+a2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha = 0.8) +
+  theme_alberta('fill', 'delta')
+
+ggarrange(a1, a2, ncol=2, common.legend = TRUE)
+```
+
+- `theme_mcgill()`
+
+``` r
+# Create scatter plot
+m1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
+  theme_mcgill('colour')
+
+# Create density plot
+m2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha=0.8) +
+  theme_mcgill('fill')
+
+ggarrange(m1, m2, ncol=2, common.legend = TRUE)
+```
+
+- `theme_toronto()`
+
+``` r
+# Create scatter plot
+t1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 2.5) +
+  theme_toronto('colour', 'vibrant')
+
+# Create density plot
+t2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha = 0.8) +
+  theme_toronto('fill', 'awards')
+
+ggarrange(t1, t2, ncol=2, common.legend = TRUE)
+```
+
+- `theme_ubc()`
+
+``` r
+# Create scatter plot
+u1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_ubc('colour')
+
+# Create density plot
+u2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha=0.8) +
+theme_ubc('fill')
+
+ggarrange(u1, u2, ncol=2, common.legend = TRUE)
+```
+
