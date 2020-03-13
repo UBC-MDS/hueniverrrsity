@@ -5,7 +5,7 @@ test_that("Test theme_mcgill", {
 
   palette <- c('#ED1B2F','#FFD794','#B5E1E1','#C8EAF5','#D5E6A8')
 
-  # Testing colour_use & colour_palette
+  # Testing colour_use
   temp <- theme_mcgill('colour')
   expect_equal(temp$palette(0), palette)
   expect_equal(temp$aesthetics, 'colour')
@@ -16,10 +16,10 @@ test_that("Test theme_mcgill", {
 
   th <- theme_get()
 
-  # Testing theme is a theme object
-  expect_equal(sum(class(th)==c("theme", "gg")), 2)
+  # Testing that that the current theme is a ggplot2 theme object
+  expect_equal(sum(class(th) == c("theme", "gg")), 2)
 
-  # Testing font size
+  # Testing font sizes for title, x-axis, y-axis, and legend
   expect_equal(th$axis.title.x$size, 12)
   expect_equal(th$axis.title.y$size, 12)
 
@@ -31,10 +31,8 @@ test_that("Test theme_mcgill", {
 
   expect_equal(th$plot.title$size, 14)
 
-  # Checking correct error message is displayed
+  # Checking that the correct error message is displayed
   expect_error(temp <- theme_mcgill('color'), "colour_use should be either 'fill' or 'colour'")
 
 
 })
-
-
