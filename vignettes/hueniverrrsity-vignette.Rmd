@@ -16,15 +16,17 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(hueniverrrsity)
+library(ggplot2)
+library(ggpubr)
 ```
 
 # Introduction
 
-All universities or colleges have a visual identity defined by specific colours and fonts. This enables all publications from a given university to have a cohesive theme and be immediatley identifiable. 
+All universities and colleges have a visual identity composed of their specific colours and typefaces. This enables all publications from a given university to have a cohesive theme and be immediately identifiable. 
 
-[hueniverrrsity](https://github.com/UBC-MDS/hueniversitypy) is a package designed to apply the visual themes of four Canadian Universities to ggplot2 objects, McGill University, University of Toronto, University of Alberta and the University of British Columbia. 
+[hueniverrrsity](https://github.com/UBC-MDS/hueniversitypy) is a package designed to apply the visual themes of four Canadian Universities to ggplot2 objects. The package currently supports the visual identities of University of Alberta, McGill University, the University of Toronto, and the University of British Columbia. 
 
-## hueniverrrsity Functions
+## Functions
 
 * `theme_alberta()` - Applies the U of A visual identity to ggplot2 objects.
   Input:
@@ -34,8 +36,8 @@ All universities or colleges have a visual identity defined by specific colours 
       - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
         `geom_violin()` and `geom_histogram()`
   - `colour_palette`: `alpha`, `beta`, `gamma` or `delta`
-    colour palettes are different colour combinations specified in the U of A visual identity
-
+    colour palettes are different colour combinations specified in the U of A visual identity </br>
+    
 * `theme_mcgill()` - Applies the McGill visual identity to ggplot2 objects.
 
   Input:
@@ -43,7 +45,7 @@ All universities or colleges have a visual identity defined by specific colours 
   - `colour_use`: `fill` or `colour`
       - `colour_use = colour` for `geom_point()` and `geom_line()`
       - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
-        `geom_violin()` and `geom_histogram()`
+        `geom_violin()` and `geom_histogram()` </br>
 
 * `theme_toronto()` - Applies the U of T visual identity to ggplot2 objects.
 
@@ -54,7 +56,7 @@ All universities or colleges have a visual identity defined by specific colours 
       - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
         `geom_violin()` and `geom_histogram()`
   - `colour_palette`: `vibrant`, `cool` or `awards`
-    colour palettes are different colour combinations specified in the U of T visual identity
+    colour palettes are different colour combinations specified in the U of T visual identity </br>
 
 * `theme_ubc()` - Applies the UBC visual identity to ggplot2 objects.
   
@@ -63,13 +65,13 @@ All universities or colleges have a visual identity defined by specific colours 
   - `colour_use`: `fill` or `colour`
       - `colour_use = colour` for `geom_point()` and `geom_line()`
       - `colour_use = fill` for `geom_boxplot()`, `geom_bar()`,
-        `geom_violin()` and `geom_histogram()`
+        `geom_violin()` and `geom_histogram()` </br>
         
 ## Examples
 
 - `theme_alberta()`
 
-``` r
+``` {r, include = TRUE}
 # Create scatter plot
 a1 <- ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
   geom_point(size = 3, alpha = 0.8) +
@@ -85,7 +87,7 @@ ggarrange(a1, a2, ncol=2, common.legend = TRUE)
 
 - `theme_mcgill()`
 
-``` r
+``` {r, include = TRUE}
 # Create scatter plot
 m1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
   geom_point(size = 3, alpha = 0.8) +
@@ -101,7 +103,7 @@ ggarrange(m1, m2, ncol=2, common.legend = TRUE)
 
 - `theme_toronto()`
 
-``` r
+``` {r, include = TRUE}
 # Create scatter plot
 t1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
   geom_point(size = 2.5) +
@@ -117,7 +119,7 @@ ggarrange(t1, t2, ncol=2, common.legend = TRUE)
 
 - `theme_ubc()`
 
-``` r
+``` {r, include = TRUE}
 # Create scatter plot
 u1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
 geom_point(size = 2.5) +

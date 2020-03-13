@@ -59,7 +59,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/UBC-MDS/hueniverrrsity">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -75,18 +82,180 @@
       <h1>hueniverrrsity-vignette</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/UBC-MDS/hueniverrrsity/blob/master/vignettes/hueniverrrsity-vignette.Rmd"><code>vignettes/hueniverrrsity-vignette.Rmd</code></a></small>
       <div class="hidden name"><code>hueniverrrsity-vignette.Rmd</code></div>
 
     </div>
 
     
     
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(hueniverrrsity)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(hueniverrrsity)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggpubr)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#&gt; Warning: package 'ggpubr' was built under R version 3.6.3</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#&gt; Loading required package: magrittr</span></span></code></pre></div>
+<div id="introduction" class="section level1">
+<h1 class="hasAnchor">
+<a href="#introduction" class="anchor"></a>Introduction</h1>
+<p>All universities and colleges have a visual identity composed of their specific colours and typefaces. This enables all publications from a given university to have a cohesive theme and be immediately identifiable.</p>
+<p><a href="https://github.com/UBC-MDS/hueniversitypy">hueniverrrsity</a> is a package designed to apply the visual themes of four Canadian Universities to ggplot2 objects. The package currently supports the visual identities of University of Alberta, McGill University, the University of Toronto, and the University of British Columbia.</p>
+<div id="functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#functions" class="anchor"></a>Functions</h2>
+<ul>
+<li>
+<p><code><a href="../reference/theme_alberta.html">theme_alberta()</a></code> - Applies the U of A visual identity to ggplot2 objects. Input:</p>
+<ul>
+<li>
+<code>colour_use</code>: <code>fill</code> or <code>colour</code>
+<ul>
+<li>
+<code>colour_use = colour</code> for <code>geom_point()</code> and <code>geom_line()</code>
+</li>
+<li>
+<code>colour_use = fill</code> for <code>geom_boxplot()</code>, <code>geom_bar()</code>, <code>geom_violin()</code> and <code>geom_histogram()</code>
+</li>
+</ul>
+</li>
+<li>
+<code>colour_palette</code>: <code>alpha</code>, <code>beta</code>, <code>gamma</code> or <code>delta</code> colour palettes are different colour combinations specified in the U of A visual identity </li>
+</ul>
+</li>
+<li>
+<p><code><a href="../reference/theme_mcgill.html">theme_mcgill()</a></code> - Applies the McGill visual identity to ggplot2 objects.</p>
+<p>Input:</p>
+<ul>
+<li>
+<code>colour_use</code>: <code>fill</code> or <code>colour</code>
+<ul>
+<li>
+<code>colour_use = colour</code> for <code>geom_point()</code> and <code>geom_line()</code>
+</li>
+<li>
+<code>colour_use = fill</code> for <code>geom_boxplot()</code>, <code>geom_bar()</code>, <code>geom_violin()</code> and <code>geom_histogram()</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code><a href="../reference/theme_toronto.html">theme_toronto()</a></code> - Applies the U of T visual identity to ggplot2 objects.</p>
+<p>Input:</p>
+<ul>
+<li>
+<code>colour_use</code>: <code>fill</code> or <code>colour</code>
+<ul>
+<li>
+<code>colour_use = colour</code> for <code>geom_point()</code> and <code>geom_line()</code>
+</li>
+<li>
+<code>colour_use = fill</code> for <code>geom_boxplot()</code>, <code>geom_bar()</code>, <code>geom_violin()</code> and <code>geom_histogram()</code>
+</li>
+</ul>
+</li>
+<li>
+<code>colour_palette</code>: <code>vibrant</code>, <code>cool</code> or <code>awards</code> colour palettes are different colour combinations specified in the U of T visual identity </li>
+</ul>
+</li>
+<li>
+<p><code><a href="../reference/theme_ubc.html">theme_ubc()</a></code> - Applies the UBC visual identity to ggplot2 objects.</p>
+<p>Input:</p>
+<ul>
+<li>
+<code>colour_use</code>: <code>fill</code> or <code>colour</code>
+<ul>
+<li>
+<code>colour_use = colour</code> for <code>geom_point()</code> and <code>geom_line()</code>
+</li>
+<li>
+<code>colour_use = fill</code> for <code>geom_boxplot()</code>, <code>geom_bar()</code>, <code>geom_violin()</code> and <code>geom_histogram()</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="examples" class="section level2">
+<h2 class="hasAnchor">
+<a href="#examples" class="anchor"></a>Examples</h2>
+<ul>
+<li><code><a href="../reference/theme_alberta.html">theme_alberta()</a></code></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>a1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data=</span>mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">y =</span> mpg, <span class="dt">colour =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">alpha =</span> <span class="fl">0.8</span>) <span class="op">+</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_alberta.html">theme_alberta</a></span>(<span class="st">'colour'</span>, <span class="st">'beta'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># Create density plot</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>a2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">fill =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.8</span>) <span class="op">+</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_alberta.html">theme_alberta</a></span>(<span class="st">'fill'</span>, <span class="st">'delta'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="kw">ggarrange</span>(a1, a2, <span class="dt">ncol=</span><span class="dv">2</span>, <span class="dt">common.legend =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="hueniverrrsity-vignette_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<ul>
+<li><code><a href="../reference/theme_mcgill.html">theme_mcgill()</a></code></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>m1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">y =</span> mpg, <span class="dt">colour =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">alpha =</span> <span class="fl">0.8</span>) <span class="op">+</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_mcgill.html">theme_mcgill</a></span>(<span class="st">'colour'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># Create density plot</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>m2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">fill =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span><span class="fl">0.8</span>) <span class="op">+</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_mcgill.html">theme_mcgill</a></span>(<span class="st">'fill'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">ggarrange</span>(m1, m2, <span class="dt">ncol=</span><span class="dv">2</span>, <span class="dt">common.legend =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="hueniverrrsity-vignette_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
+<ul>
+<li><code><a href="../reference/theme_toronto.html">theme_toronto()</a></code></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>t1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">y =</span> mpg, <span class="dt">colour =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_toronto.html">theme_toronto</a></span>(<span class="st">'colour'</span>, <span class="st">'vibrant'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># Create density plot</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>t2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">fill =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.8</span>) <span class="op">+</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="st">  </span><span class="kw"><a href="../reference/theme_toronto.html">theme_toronto</a></span>(<span class="st">'fill'</span>, <span class="st">'awards'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="kw">ggarrange</span>(t1, t2, <span class="dt">ncol=</span><span class="dv">2</span>, <span class="dt">common.legend =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="hueniverrrsity-vignette_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+<ul>
+<li><code><a href="../reference/theme_ubc.html">theme_ubc()</a></code></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>u1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">y =</span> mpg, <span class="dt">colour =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw"><a href="../reference/theme_ubc.html">theme_ubc</a></span>(<span class="st">'colour'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co"># Create density plot</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>u2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> mtcars, <span class="kw">aes</span>(<span class="dt">x =</span> hp, <span class="dt">fill =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(cyl))) <span class="op">+</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">geom_density</span>(<span class="dt">alpha=</span><span class="fl">0.8</span>) <span class="op">+</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="kw"><a href="../reference/theme_ubc.html">theme_ubc</a></span>(<span class="st">'fill'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="kw">ggarrange</span>(u1, u2, <span class="dt">ncol=</span><span class="dv">2</span>, <span class="dt">common.legend =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p><img src="hueniverrrsity-vignette_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
 
+        <div id="tocnav">
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+<li>
+<a href="#introduction">Introduction</a>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="#functions">Functions</a></li>
+      <li><a href="#examples">Examples</a></li>
+      </ul>
+</li>
+      </ul>
+</div>
       </div>
 
 </div>
