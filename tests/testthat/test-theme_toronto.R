@@ -7,7 +7,7 @@ test_that("Test theme_toronto", {
   cool <- c('#002A5C', '#7BA4D9', '#008BB0', '#DAE5CD')
   awards <- c('#002A5C', '#FFE498', '#CECFCB', '#271100')
 
-  # Testing colour_use & colour_palette
+  # Testing all combinations of colour_use & colour_palette
   temp <- theme_toronto('colour', 'vibrant')
   expect_equal(temp$palette(0), vibrant)
   expect_equal(temp$aesthetics, 'colour')
@@ -34,10 +34,10 @@ test_that("Test theme_toronto", {
 
   current_theme <- theme_get()
 
-  # Testing current theme is a theme object
-  expect_equal(sum(class(current_theme)==c("theme", "gg")), 2)
+  # Testing that the current theme is a ggplot2 theme object
+  expect_equal(sum(class(current_theme) == c("theme", "gg")), 2)
 
-  # Testing font size
+  # Testing font sizes for title, x-axis, y-axis, and legend
   expect_equal(current_theme$axis.title.x$size, 12)
   expect_equal(current_theme$axis.title.y$size, 12)
 
@@ -49,7 +49,7 @@ test_that("Test theme_toronto", {
 
   expect_equal(current_theme$plot.title$size, 14)
 
-  # Checking correct error messages are displayed
+  # Checking that the correct error messages are displayed
   expect_error(temp <- theme_toronto('colour', 'random'), "colour_palette should be one of 'vibrant', 'cool', or 'awards'")
   expect_error(temp <- theme_toronto('color', 'awards'), "colour_use should be either 'fill' or 'colour'")
 

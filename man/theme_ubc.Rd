@@ -26,7 +26,7 @@ theme_ubc('colour')
 
 \dontrun{
 ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
-geom_density(alpha=0.8) +
+geom_density(alpha = 0.8) +
 theme_ubc('fill')
 }
 }
