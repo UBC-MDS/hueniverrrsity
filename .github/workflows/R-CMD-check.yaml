@@ -79,3 +79,8 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
+        
+      - name: Test R package coverage
+        if: matrix.config.os == 'ubuntu-16.04' && matrix.config.r == '3.6'
+        run: covr::codecov()
+        shell: Rscript {0}
