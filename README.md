@@ -149,11 +149,11 @@ Input:
 
 Available palettes:
 
-`vibrant` <br/> <img src="imgs/toronto_vibrant.png" width="25%" />
+`vibrant` <br/> <img src="imgs/toronto_vibrant.PNG" width="25%" />
 
-`cool` <br/> <img src="imgs/toronto_cool.png" width="25%" />
+`cool` <br/> <img src="imgs/toronto_cool.PNG" width="25%" />
 
-`awards` <br/> <img src="imgs/toronto_awards.png" width="25%" />
+`awards` <br/> <img src="imgs/toronto_awards.PNG" width="25%" />
 
 Output:
 
