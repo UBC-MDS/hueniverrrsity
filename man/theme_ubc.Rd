@@ -2,15 +2,15 @@
 % Please edit documentation in R/theme_ubc.R
 \name{theme_ubc}
 \alias{theme_ubc}
-\title{University of British Columbia Plotting Theme}
+\title{The University of British Columbia ggplot2 theme}
 \usage{
-: ggplot(data, aes(x, y, colour = class)) + theme_ubc('colour')
+theme_ubc(colour_use)
 }
 \arguments{
-\item{colour_use}{either 'fill' or 'colour' depending on how the colour will be displayed.}
+\item{colour_use}{either 'fill' or 'colour' depending on the base plot.}
 }
 \value{
-reformatted plot with UBC's visual identity theme.
+reformatted plot with the University of British Columbia's visual identity theme.
 }
 \description{
 : theme_ubc() creates a theme using the University of British Columbia's visual identity
@@ -18,7 +18,15 @@ to be used with ggplot2. See the visual identity at https://brand.ubc.ca/guideli
 }
 \examples{
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_ubc('fill')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_ubc('colour')
+}
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_ubc('colour')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha=0.8) +
+theme_ubc('fill')
+}
 }

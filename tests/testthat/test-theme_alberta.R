@@ -8,7 +8,7 @@ test_that("Test theme_alberta", {
   gamma <- c('#007C41', '#FFDB05', '#3CB6CE', '#A3A86B', '#7AB800')
   delta <- c('#007C41', '#FFDB05', '#D4BA00', '#6773B6', '#2A6EBB')
 
-  # testing colour_use & colour_palette
+  # Testing colour_use & colour_palette
   temp <- theme_alberta('colour', 'alpha')
   expect_equal(temp$palette(0), alpha)
   expect_equal(temp$aesthetics, 'colour')
@@ -43,10 +43,10 @@ test_that("Test theme_alberta", {
 
   current_theme <- theme_get()
 
-  # testing that current theme is a theme object
+  # Testing that current theme is a theme object
   expect_equal(sum(class(current_theme) == c("theme", "gg")), 2)
 
-  # testing font size
+  # Testing font size
   expect_equal(current_theme$axis.title.x$size, 12)
   expect_equal(current_theme$axis.title.y$size, 12)
 
@@ -58,7 +58,7 @@ test_that("Test theme_alberta", {
 
   expect_equal(current_theme$plot.title$size, 14)
 
-  # Testing code defensively (checking correct error messages are displayes)
+  # Checking correct error messages are displayed
   expect_error(temp <- theme_alberta('colour', 'epsilon'), "colour_palette should be one of 'alpha', 'beta', 'gamma', or 'delta'")
   expect_error(temp <- theme_alberta('color', 'alpha'), "colour_use should be either 'fill' or 'colour'")
 

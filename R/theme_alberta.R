@@ -1,35 +1,37 @@
-#' University of Alberta Plotting Theme
+#' The University of Alberta ggplot2 theme
 #'
-#' @param colour_use either 'fill' or 'colour' depending on how the colour will be displayed.
-#' @param colour_palette either 'alpha', 'beta', 'gamma' or 'delta' depending on which palette is selected
+#' @param colour_use either 'fill' or 'colour' depending on the base plot.
+#' @param colour_palette either 'alpha', 'beta', 'gamma' or 'delta' depending on which palette is selected.
 #'
 #' @description: theme_alberta() creates a theme using the University of Alberta visual identity
 #' to be used with ggplot2. See the visual identity at https://www.ualberta.ca/toolkit/visual-identity/our-colours
 #'
-#' @usage: ggplot(data, aes(x, y, colour = class)) + theme_alberta('colour', 'alpha')
-#'
-#' @return reformatted plot with University of Alberta's visual identity theme.
+#' @return reformatted plot with the University of Alberta's visual identity theme.
 #' @export
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species)))
-#' + geom_boxplot()
-#' + theme_alberta('fill', 'alpha')}
+#' \dontrun{
+#' ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+#' geom_point(size = 2.5) +
+#' theme_alberta('colour', 'beta')
+#' }
 #'
-#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species)))
-#' + geom_point()
-#' + theme_alberta('colour', 'alpha')}
+#' \dontrun{
+#' ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+#' geom_density(alpha = 0.8) +
+#' theme_alberta('fill', 'alpha')
+#' }
 theme_alberta <- function(colour_use, colour_palette) {
 
   new <- ggplot2::theme_bw() +
-    ggplot2::theme(plot.title =  ggplot2::element_text(size=14),
-          axis.title.x =  ggplot2::element_text(size=12),
-          axis.text.x =  ggplot2::element_text(size=11),
-          axis.title.y =  ggplot2::element_text(size=12),
-          axis.text.y =  ggplot2::element_text(size=11),
-          legend.title =  ggplot2::element_text(size=12),
-          legend.text =  ggplot2::element_text(size=11))
+    ggplot2::theme(plot.title = ggplot2::element_text(size=14),
+          axis.title.x = ggplot2::element_text(size=12),
+          axis.text.x = ggplot2::element_text(size=11),
+          axis.title.y = ggplot2::element_text(size=12),
+          axis.text.y = ggplot2::element_text(size=11),
+          legend.title = ggplot2::element_text(size=12),
+          legend.text = ggplot2::element_text(size=11))
 
   ggplot2::theme_set(new)
 

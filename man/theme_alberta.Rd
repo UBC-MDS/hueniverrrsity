@@ -2,17 +2,17 @@
 % Please edit documentation in R/theme_alberta.R
 \name{theme_alberta}
 \alias{theme_alberta}
-\title{University of Alberta Plotting Theme}
+\title{The University of Alberta ggplot2 theme}
 \usage{
-: ggplot(data, aes(x, y, colour = class)) + theme_alberta('colour', 'alpha')
+theme_alberta(colour_use, colour_palette)
 }
 \arguments{
-\item{colour_use}{either 'fill' or 'colour' depending on how the colour will be displayed.}
+\item{colour_use}{either 'fill' or 'colour' depending on the base plot.}
 
-\item{colour_palette}{either 'alpha', 'beta', 'gamma' or 'delta' depending on which palette is selected}
+\item{colour_palette}{either 'alpha', 'beta', 'gamma' or 'delta' depending on which palette is selected.}
 }
 \value{
-reformatted plot with University of Alberta's visual identity theme.
+reformatted plot with the University of Alberta's visual identity theme.
 }
 \description{
 : theme_alberta() creates a theme using the University of Alberta visual identity
@@ -20,11 +20,15 @@ to be used with ggplot2. See the visual identity at https://www.ualberta.ca/tool
 }
 \examples{
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species)))
-+ geom_boxplot()
-+ theme_alberta('fill', 'alpha')}
+\dontrun{
+ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_alberta('colour', 'beta')
+}
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species)))
-+ geom_point()
-+ theme_alberta('colour', 'alpha')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha = 0.8) +
+theme_alberta('fill', 'alpha')
+}
 }

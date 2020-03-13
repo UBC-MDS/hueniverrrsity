@@ -1,21 +1,28 @@
-#' McGill University Plotting Theme
+#' McGill University ggplot2 theme
 #'
-#' @param colour_use either 'fill' or 'colour' depending on how the colour will be displayed.
+#' @param colour_use either 'fill' or 'colour' depending on the base plot.
 #'
 #' @description: theme_mcgill() creates a theme using the McGill University's visual identity
 #' to be used with ggplot2. See the visual identity at https://www.mcgill.ca/visual-identity/visual-identity-guide
-#'
-#' @usage: ggplot(data, aes(x, y, colour = class)) + theme_mcgill('colour')
 #'
 #' @return reformatted plot with McGill University's visual identity theme.
 #' @export
 #'
 #' @examples
 #'
-#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_mcgill('fill')}
+#' \dontrun{
+#' ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+#' geom_point(size = 2.5) +
+#' theme_mcgill('colour')
+#' }
 #'
-#' \dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_mcgill('colour')}
+#' \dontrun{
+#' ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+#' geom_density(alpha=0.8) +
+#' theme_mcgill('fill')
+#' }
 theme_mcgill <- function(colour_use) {
+
   new <- ggplot2::theme_bw() +
     ggplot2::theme(plot.title = ggplot2::element_text(size=14),
           axis.title.x = ggplot2::element_text(size=12),
@@ -27,7 +34,7 @@ theme_mcgill <- function(colour_use) {
 
   ggplot2::theme_set(new)
 
-  # Initialize colour palettes
+  # Initialize colour palette
   palette <- c("#ED1B2F","#FFD794","#B5E1E1","#C8EAF5","#D5E6A8")
 
   if (colour_use %in% c('fill', 'colour')) {
