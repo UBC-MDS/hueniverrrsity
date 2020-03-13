@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(hueniverrrsity)
 library(ggplot2)
-library(ggpubr)
 ```
 
 # Introduction
@@ -73,63 +72,55 @@ All universities and colleges have a visual identity composed of their specific 
 
 ``` {r, include = TRUE}
 # Create scatter plot
-a1 <- ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
   geom_point(size = 3, alpha = 0.8) +
   theme_alberta('colour', 'beta')
 
 # Create density plot
-a2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
   geom_density(alpha = 0.8) +
   theme_alberta('fill', 'delta')
-
-ggarrange(a1, a2, ncol=2, common.legend = TRUE)
 ```
 
 - `theme_mcgill()`
 
 ``` {r, include = TRUE}
 # Create scatter plot
-m1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
   geom_point(size = 3, alpha = 0.8) +
   theme_mcgill('colour')
 
 # Create density plot
-m2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
   geom_density(alpha=0.8) +
   theme_mcgill('fill')
-
-ggarrange(m1, m2, ncol=2, common.legend = TRUE)
 ```
 
 - `theme_toronto()`
 
 ``` {r, include = TRUE}
 # Create scatter plot
-t1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
   geom_point(size = 2.5) +
   theme_toronto('colour', 'vibrant')
 
 # Create density plot
-t2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
   geom_density(alpha = 0.8) +
   theme_toronto('fill', 'awards')
-
-ggarrange(t1, t2, ncol=2, common.legend = TRUE)
 ```
 
 - `theme_ubc()`
 
 ``` {r, include = TRUE}
 # Create scatter plot
-u1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
-geom_point(size = 2.5) +
-theme_ubc('colour')
+ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 2.5) +
+  theme_ubc('colour')
 
 # Create density plot
-u2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
-geom_density(alpha=0.8) +
-theme_ubc('fill')
-
-ggarrange(u1, u2, ncol=2, common.legend = TRUE)
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha=0.8) +
+  theme_ubc('fill')
 ```
 

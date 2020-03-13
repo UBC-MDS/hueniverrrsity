@@ -65,22 +65,22 @@ Available palettes:
 
 `alpha` <br/>
 ``` {r out.width = "33%", echo = FALSE}
-knitr::include_graphics("imgs/alberta_1.png")
+knitr::include_graphics("imgs/alpha.png")
 ```
 
 `beta` <br/>
 ``` {r out.width = "33%", echo = FALSE}
-knitr::include_graphics("imgs/alberta_2.png")
+knitr::include_graphics("imgs/beta.png")
 ```
 
 `gamma` <br/>
 ``` {r out.width = "33%", echo = FALSE}
-knitr::include_graphics("imgs/alberta_3.png")
+knitr::include_graphics("imgs/gamma.png")
 ```
 
 `delta` <br/>
 ``` {r out.width = "33%", echo = FALSE}
-knitr::include_graphics("imgs/alberta_4.png")
+knitr::include_graphics("imgs/delta.png")
 ```
 
 
@@ -152,17 +152,17 @@ Available palettes:
 
 `vibrant` <br/>
 ``` {r out.width = "25%", echo = FALSE}
-knitr::include_graphics("imgs/toronto_vibrant.png")
+knitr::include_graphics("imgs/vibrant.png")
 ```
 
 `cool` <br/> 
 ``` {r out.width = "25%", echo = FALSE}
-knitr::include_graphics("imgs/toronto_cool.png")
+knitr::include_graphics("imgs/cool.png")
 ```
 
 `awards` <br/>
 ``` {r out.width = "25%", echo = FALSE}
-knitr::include_graphics("imgs/toronto_awards.png")
+knitr::include_graphics("imgs/awards.png")
 ```
 
 Output: 
