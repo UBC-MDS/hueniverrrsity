@@ -41,14 +41,8 @@ appearance of plots.
 
 ## Installation
 
-You can install the released version of hueniverrrsity from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("hueniverrrsity")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of hueniverrrsity from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -76,28 +70,36 @@ Input:
 
 Available palettes:
 
-`alpha` <img src="imgs/alberta_1.PNG" width="33%" />
+`alpha` <br/> <img src="imgs/alberta_1.png" width="33%" />
 
-`beta` <img src="imgs/alberta_2.PNG" width="33%" />
+`beta` <br/> <img src="imgs/alberta_2.png" width="33%" />
 
-`gamma` <img src="imgs/alberta_3.PNG" width="33%" />
+`gamma` <br/> <img src="imgs/alberta_3.png" width="33%" />
 
-`delta` <img src="imgs/alberta_4.PNG" width="33%" />
+`delta` <br/> <img src="imgs/alberta_4.png" width="33%" />
 
 Output:
 
   - A ggplot2 object in line with [the University of Alberta’s visual
     identity](https://www.ualberta.ca/toolkit/visual-identity/our-colours)
 
-Example:
+Examples:
 
 ``` r
-ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
-  geom_point(size = 2.5) +
+# Create scatter plot
+a1 <- ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
   theme_alberta('colour', 'beta')
+
+# Create density plot
+a2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha = 0.8) +
+  theme_alberta('fill', 'delta')
+
+ggarrange(a1, a2, ncol=2, common.legend = TRUE)
 ```
 
-<img src="man/figures/README-theme_alberta()-1.png" width="100%" />
+<img src="man/figures/README-theme_alberta()-1.png" width="80%" />
 
 ### `theme_mcgill()`
 
@@ -117,15 +119,23 @@ Output:
   - A ggplot2 object in line with [McGill University’s visual
     identity](https://mcgill.ca/visual-identity/visual-identity-guide#mcgilllogo)
 
-Example:
+Examples:
 
 ``` r
-ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
-  geom_point(size = 2.5) +
+# Create scatter plot
+m1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
   theme_mcgill('colour')
+
+# Create density plot
+m2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha=0.8) +
+  theme_mcgill('fill')
+
+ggarrange(m1, m2, ncol=2, common.legend = TRUE)
 ```
 
-<img src="man/figures/README-theme_mcgill()-1.png" width="100%" />
+<img src="man/figures/README-theme_mcgill()-1.png" width="80%" />
 
 ### `theme_toronto()`
 
@@ -139,26 +149,34 @@ Input:
 
 Available palettes:
 
-`vibrant` <img src="imgs/toronto_vibrant.PNG" width="25%" />
+`vibrant` <br/> <img src="imgs/toronto_vibrant.png" width="25%" />
 
-`cool` <img src="imgs/toronto_cool.PNG" width="25%" />
+`cool` <br/> <img src="imgs/toronto_cool.png" width="25%" />
 
-`awards` <img src="imgs/toronto_awards.PNG" width="25%" />
+`awards` <br/> <img src="imgs/toronto_awards.png" width="25%" />
 
 Output:
 
   - A ggplot2 object in line with [the University of Toronto’s visual
     identity](https://www.utm.utoronto.ca/communications/sites/files/communications/public/shared/UofT%20Style%20Guide%20%2B%20Boundless%20Guide%20Feb%202012.pdf)
 
-Example:
+Examples:
 
 ``` r
-ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
-  geom_boxplot() +
+# Create scatter plot
+t1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 2.5) +
+  theme_toronto('colour', 'vibrant')
+
+# Create density plot
+t2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha = 0.8) +
   theme_toronto('fill', 'awards')
+
+ggarrange(t1, t2, ncol=2, common.legend = TRUE)
 ```
 
-<img src="man/figures/README-theme_toronto()-1.png" width="100%" />
+<img src="man/figures/README-theme_toronto()-1.png" width="80%" />
 
 ### `theme_ubc()`
 
@@ -179,12 +197,20 @@ Output:
     visual
     identity](https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/)
 
-Example:
+Examples:
 
 ``` r
-ggplot(iris, aes(x = Species, y = Sepal.Width, fill = Species)) +
-  geom_boxplot() +
-  theme_ubc('fill')
+# Create scatter plot
+u1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_ubc('colour')
+
+# Create density plot
+u2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha=0.8) +
+theme_ubc('fill')
+
+ggarrange(u1, u2, ncol=2, common.legend = TRUE)
 ```
 
-<img src="man/figures/README-theme_ubc()-1.png" width="100%" />
+<img src="man/figures/README-theme_ubc()-1.png" width="80%" />

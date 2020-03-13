@@ -7,7 +7,8 @@ output: github_document
 ```{r, include = FALSE}
 library(tidyverse)
 library(hueniverrrsity)
-library(gapminder)
+library(gridExtra)
+library(ggpubr)
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -32,13 +33,7 @@ The hueniverrrsity package fits into the R ecosystem with other R packages that 
 
 ## Installation
 
-You can install the released version of hueniverrrsity from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("hueniverrrsity")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of hueniverrrsity from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -66,22 +61,22 @@ Input:
 
 Available palettes:
 
-`alpha` 
+`alpha` <br/>
 ``` {r out.width = "33%", echo = FALSE}
 knitr::include_graphics("imgs/alberta_1.png")
 ```
 
-`beta`
+`beta` <br/>
 ``` {r out.width = "33%", echo = FALSE}
 knitr::include_graphics("imgs/alberta_2.png")
 ```
 
-`gamma`
+`gamma` <br/>
 ``` {r out.width = "33%", echo = FALSE}
 knitr::include_graphics("imgs/alberta_3.png")
 ```
 
-`delta`
+`delta` <br/>
 ``` {r out.width = "33%", echo = FALSE}
 knitr::include_graphics("imgs/alberta_4.png")
 ```
@@ -91,12 +86,20 @@ Output:
 
 - A ggplot2 object in line with [the University of Alberta's visual identity](https://www.ualberta.ca/toolkit/visual-identity/our-colours)
 
-Example:
+Examples:
 
-``` {r theme_alberta(), fig.width = 7, fig.height = 4}
-ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
-  geom_point(size = 2.5) +
+``` {r theme_alberta(), out.width = "80%"}
+# Create scatter plot
+a1 <- ggplot(data=mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
   theme_alberta('colour', 'beta')
+
+# Create density plot
+a2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha = 0.8) +
+  theme_alberta('fill', 'delta')
+
+ggarrange(a1, a2, ncol=2, common.legend = TRUE)
 ```
 
 ### `theme_mcgill()`
@@ -117,12 +120,20 @@ Output:
 
 - A ggplot2 object in line with [McGill University's visual identity](https://mcgill.ca/visual-identity/visual-identity-guide#mcgilllogo)
 
-Example:
+Examples:
 
-``` {r theme_mcgill(), fig.width = 7, fig.height = 4}
-ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
-  geom_point(size = 2.5) +
+``` {r theme_mcgill(), out.width = "80%"}
+# Create scatter plot
+m1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
   theme_mcgill('colour')
+
+# Create density plot
+m2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha=0.8) +
+  theme_mcgill('fill')
+
+ggarrange(m1, m2, ncol=2, common.legend = TRUE)
 ```
 
 ### `theme_toronto()`
@@ -137,17 +148,17 @@ Input:
 
 Available palettes:
 
-`vibrant`
+`vibrant` <br/>
 ``` {r out.width = "25%", echo = FALSE}
 knitr::include_graphics("imgs/toronto_vibrant.png")
 ```
 
-`cool`
+`cool` <br/> 
 ``` {r out.width = "25%", echo = FALSE}
 knitr::include_graphics("imgs/toronto_cool.png")
 ```
 
-`awards`
+`awards` <br/>
 ``` {r out.width = "25%", echo = FALSE}
 knitr::include_graphics("imgs/toronto_awards.png")
 ```
@@ -156,12 +167,20 @@ Output:
 
 - A ggplot2 object in line with [the University of Toronto's visual identity](https://www.utm.utoronto.ca/communications/sites/files/communications/public/shared/UofT%20Style%20Guide%20%2B%20Boundless%20Guide%20Feb%202012.pdf)
 
-Example:
+Examples:
 
-``` {r theme_toronto(), fig.width = 7, fig.height = 4}
-ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
-  geom_boxplot() +
+``` {r theme_toronto(), out.width = "80%"}
+# Create scatter plot
+t1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+  geom_point(size = 2.5) +
+  theme_toronto('colour', 'vibrant')
+
+# Create density plot
+t2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+  geom_density(alpha = 0.8) +
   theme_toronto('fill', 'awards')
+
+ggarrange(t1, t2, ncol=2, common.legend = TRUE)
 ```
 
 ### `theme_ubc()`
@@ -182,10 +201,18 @@ Output:
 
 - A ggplot2 object in line with [the University of British Columbia's visual identity](https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/)
 
-Example:
+Examples:
 
-``` {r theme_ubc(), fig.width = 7, fig.height = 4}
-ggplot(iris, aes(x = Species, y = Sepal.Width, fill = Species)) +
-  geom_boxplot() +
-  theme_ubc('fill')
+``` {r theme_ubc(), out.width = "80%"}
+# Create scatter plot
+u1 <- ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_ubc('colour')
+
+# Create density plot
+u2 <- ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha=0.8) +
+theme_ubc('fill')
+
+ggarrange(u1, u2, ncol=2, common.legend = TRUE)
 ```

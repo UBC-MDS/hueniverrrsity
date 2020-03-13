@@ -2,12 +2,12 @@
 % Please edit documentation in R/theme_mcgill.R
 \name{theme_mcgill}
 \alias{theme_mcgill}
-\title{McGill University Plotting Theme}
+\title{McGill University ggplot2 theme}
 \usage{
-: ggplot(data, aes(x, y, colour = class)) + theme_mcgill('colour')
+theme_mcgill(colour_use)
 }
 \arguments{
-\item{colour_use}{either 'fill' or 'colour' depending on how the colour will be displayed.}
+\item{colour_use}{either 'fill' or 'colour' depending on the base plot.}
 }
 \value{
 reformatted plot with McGill University's visual identity theme.
@@ -18,7 +18,15 @@ to be used with ggplot2. See the visual identity at https://www.mcgill.ca/visual
 }
 \examples{
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_mcgill('fill')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_mcgill('colour')
+}
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_mcgill('colour')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha=0.8) +
+theme_mcgill('fill')
+}
 }

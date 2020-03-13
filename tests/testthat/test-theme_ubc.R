@@ -5,11 +5,11 @@ test_that("Test theme_ubc", {
 
 	palette <- c('#002145', '#0055B7', '#00A7E1', '#40B4E5', '#6EC4E8', '#97D4E9')
 
-	# Testing colour use & colour palette
+	# Testing colour_use & colour_palette
 	temp <- theme_ubc('colour')
 	expect_equal(temp$palette(0), palette)
 	expect_equal(temp$aesthetics, 'colour')
-	
+
 	temp <- theme_ubc('fill')
 	expect_equal(temp$palette(0), palette)
 	expect_equal(temp$aesthetics, 'fill')
@@ -17,10 +17,10 @@ test_that("Test theme_ubc", {
 
 	th <- theme_get()
 
-	# testing theme is a theme object
+	# Testing theme is a theme object
 	expect_equal(sum(class(th)==c("theme", "gg")), 2)
 
-	# testing font size
+	# Testing font size
 	expect_equal(th$axis.title.x$size, 12)
 	expect_equal(th$axis.title.y$size, 12)
 
@@ -32,7 +32,7 @@ test_that("Test theme_ubc", {
 
 	expect_equal(th$plot.title$size, 14)
 
-	# Testing code defensively (checking correct error messages are displayes)
+	# Checking correct error message is displayed
 	expect_error(temp <- theme_ubc('color'), "colour_use should be either 'fill' or 'colour'")
 
 })

@@ -2,17 +2,17 @@
 % Please edit documentation in R/theme_toronto.R
 \name{theme_toronto}
 \alias{theme_toronto}
-\title{University of Toronto Plotting Theme}
+\title{The University of Toronto ggplot2 theme}
 \usage{
-: ggplot(data, aes(x, y, colour = class)) + theme_toronto('colour', 'vibrant')
+theme_toronto(colour_use, colour_palette)
 }
 \arguments{
-\item{colour_use}{either 'fill' or 'colour' depending on how the colour will be displayed.}
+\item{colour_use}{either 'fill' or 'colour' depending on the base plot.}
 
 \item{colour_palette}{either 'vibrant', 'cool' or 'awards' depending on the use of the visualization.}
 }
 \value{
-reformatted plot with University of Toronto's visual identity theme.
+reformatted plot with the University of Toronto's visual identity theme.
 }
 \description{
 : theme_toronto() creates a theme using the University of Toronto visual identity
@@ -20,7 +20,15 @@ to be used with ggplot2. See the visual identity at https://tinyurl.com/t3jjr49
 }
 \examples{
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, fill = as.factor(Species))) + geom_boxplot() + theme_toronto('fill', 'vibrant')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, y = mpg, colour = as.factor(cyl))) +
+geom_point(size = 2.5) +
+theme_toronto('colour', 'vibrant')
+}
 
-\dontrun{ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = as.factor(Species))) + geom_point() + theme_toronto('colour', 'vibrant')}
+\dontrun{
+ggplot(data = mtcars, aes(x = hp, fill = as.factor(cyl))) +
+geom_density(alpha = 0.8) +
+theme_toronto('fill', 'awards')
+}
 }
