@@ -29,6 +29,8 @@ A visual identity allows an organization to be instantly recognizable. Comprised
 
 This R package allows users to apply university-specific themes to ggplot2 objects. This package currently supports the official colour palettes of four institutions belonging to the U15 Group of Canadian Research Universities: the University of Alberta, the University of British Columbia, McGill University, and the University of Toronto. In the future, we hope to extend this package to support the visual identities of all universities in the association.
 
+To see the vignette for this package, click [here](https://ubc-mds.github.io/hueniverrrsity/articles/hueniverrrsity-vignette.html)
+
 ### hueniverrrsity in the R ecosystem
 
 The hueniverrrsity package fits into the R ecosystem with other R packages that allow users to change the theme of ggplot2 objects. These types of packages allow general aesthetic theme changes or specific theme changes for a purpose. One of the most common packages of this type is [ggthemes](https://cran.r-project.org/web/packages/ggthemes/index.html), which allows users to select and apply different general themes to ggplot2 objects. Our package will be different from ggthemes since the goal of the change in plot theme is to adhere to university-specific colour palettes, rather than to generally change the colour and appearance of plots.

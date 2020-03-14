@@ -29,6 +29,9 @@ British Columbia, McGill University, and the University of Toronto. In
 the future, we hope to extend this package to support the visual
 identities of all universities in the association.
 
+To see the vignette for this package, click
+[here](https://ubc-mds.github.io/hueniverrrsity/articles/hueniverrrsity-vignette.html)
+
 ### hueniverrrsity in the R ecosystem
 
 The hueniverrrsity package fits into the R ecosystem with other R
@@ -55,11 +58,12 @@ devtools::install_github("UBC-MDS/hueniverrrsity")
 
 ## Usage
 
-Start by importing the following packages:
+To run the toy example, start by importing the following packages:
 
 ``` r
 library(hueniverrrsity)
 library(ggplot2)
+library(ggpubr)
 ```
 
 ### `theme_alberta()`
