@@ -58,11 +58,12 @@ devtools::install_github("UBC-MDS/hueniverrrsity")
 
 ## Usage
 
-Start by importing the following packages:
+To run the toy example, start by importing the following packages:
 
 ``` r
 library(hueniverrrsity)
 library(ggplot2)
+library(ggpubr)
 ```
 
 ### `theme_alberta()`
