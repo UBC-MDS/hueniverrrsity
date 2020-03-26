@@ -3,7 +3,7 @@
 #' @param colour_use either 'fill' or 'colour' depending on the base plot.
 #' @param colour_palette either 'vibrant', 'cool' or 'awards' depending on the use of the visualization.
 #'
-#' @description: theme_toronto() creates a theme using the University of Toronto visual identity
+#' @description theme_toronto() creates a theme using the University of Toronto visual identity
 #' to be used with ggplot2. See the visual identity at https://tinyurl.com/t3jjr49
 #'
 #' @return reformatted plot with the University of Toronto's visual identity theme.

@@ -13,7 +13,7 @@ theme_mcgill(colour_use)
 reformatted plot with McGill University's visual identity theme.
 }
 \description{
-: theme_mcgill() creates a theme using the McGill University's visual identity
+theme_mcgill() creates a theme using the McGill University's visual identity
 to be used with ggplot2. See the visual identity at https://www.mcgill.ca/visual-identity/visual-identity-guide
 }
 \examples{

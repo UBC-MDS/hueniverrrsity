@@ -15,7 +15,7 @@ theme_alberta(colour_use, colour_palette)
 reformatted plot with the University of Alberta's visual identity theme.
 }
 \description{
-: theme_alberta() creates a theme using the University of Alberta visual identity
+theme_alberta() creates a theme using the University of Alberta visual identity
 to be used with ggplot2. See the visual identity at https://www.ualberta.ca/toolkit/visual-identity/our-colours
 }
 \examples{
