@@ -6,7 +6,7 @@
 #' @description theme_alberta() creates a theme using the University of Alberta visual identity
 #' to be used with ggplot2. See the visual identity at https://www.ualberta.ca/toolkit/visual-identity/our-colours
 #'
-#' @return reformatted plot with the University of Alberta's visual identity theme.
+#' @return Reformatted ggplot with the University of Alberta's visual identity theme.
 #' @export
 #'
 #' @examples

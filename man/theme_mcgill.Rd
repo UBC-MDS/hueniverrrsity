@@ -10,7 +10,7 @@ theme_mcgill(colour_use)
 \item{colour_use}{either 'fill' or 'colour' depending on the base plot.}
 }
 \value{
-reformatted plot with McGill University's visual identity theme.
+Reformatted ggplot with McGill University's visual identity theme.
 }
 \description{
 theme_mcgill() creates a theme using the McGill University's visual identity

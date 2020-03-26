@@ -10,7 +10,7 @@ theme_ubc(colour_use)
 \item{colour_use}{either 'fill' or 'colour' depending on the base plot.}
 }
 \value{
-reformatted plot with the University of British Columbia's visual identity theme.
+Reformatted ggplot with the University of British Columbia's visual identity theme.
 }
 \description{
 theme_ubc() creates a theme using the University of British Columbia's visual identity

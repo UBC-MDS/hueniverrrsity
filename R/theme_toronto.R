@@ -6,7 +6,7 @@
 #' @description theme_toronto() creates a theme using the University of Toronto visual identity
 #' to be used with ggplot2. See the visual identity at https://tinyurl.com/t3jjr49
 #'
-#' @return reformatted plot with the University of Toronto's visual identity theme.
+#' @return Reformatted ggplot with the University of Toronto's visual identity theme.
 #' @export
 #'
 #' @examples
