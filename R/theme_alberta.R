@@ -3,7 +3,7 @@
 #' @param colour_use either 'fill' or 'colour' depending on the base plot.
 #' @param colour_palette either 'alpha', 'beta', 'gamma' or 'delta' depending on which palette is selected.
 #'
-#' @description: theme_alberta() creates a theme using the University of Alberta visual identity
+#' @description theme_alberta() creates a theme using the University of Alberta visual identity
 #' to be used with ggplot2. See the visual identity at https://www.ualberta.ca/toolkit/visual-identity/our-colours
 #'
 #' @return reformatted plot with the University of Alberta's visual identity theme.

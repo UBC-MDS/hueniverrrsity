@@ -2,7 +2,7 @@
 #'
 #' @param colour_use either 'fill' or 'colour' depending on the base plot.
 #'
-#' @description: theme_ubc() creates a theme using the University of British Columbia's visual identity
+#' @description theme_ubc() creates a theme using the University of British Columbia's visual identity
 #' to be used with ggplot2. See the visual identity at https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/
 #'
 #' @return reformatted plot with the University of British Columbia's visual identity theme.

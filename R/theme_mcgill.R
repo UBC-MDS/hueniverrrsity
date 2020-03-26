@@ -2,7 +2,7 @@
 #'
 #' @param colour_use either 'fill' or 'colour' depending on the base plot.
 #'
-#' @description: theme_mcgill() creates a theme using the McGill University's visual identity
+#' @description theme_mcgill() creates a theme using the McGill University's visual identity
 #' to be used with ggplot2. See the visual identity at https://www.mcgill.ca/visual-identity/visual-identity-guide
 #'
 #' @return reformatted plot with McGill University's visual identity theme.

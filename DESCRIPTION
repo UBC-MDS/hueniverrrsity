@@ -20,7 +20,7 @@ Description: Make figures consistent with the visual identity of Canadian univer
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Suggests: 
     testthat (>= 2.1.0),
     knitr,

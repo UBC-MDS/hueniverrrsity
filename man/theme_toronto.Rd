@@ -15,7 +15,7 @@ theme_toronto(colour_use, colour_palette)
 reformatted plot with the University of Toronto's visual identity theme.
 }
 \description{
-: theme_toronto() creates a theme using the University of Toronto visual identity
+theme_toronto() creates a theme using the University of Toronto visual identity
 to be used with ggplot2. See the visual identity at https://tinyurl.com/t3jjr49
 }
 \examples{
