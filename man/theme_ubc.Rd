@@ -13,7 +13,7 @@ theme_ubc(colour_use)
 reformatted plot with the University of British Columbia's visual identity theme.
 }
 \description{
-: theme_ubc() creates a theme using the University of British Columbia's visual identity
+theme_ubc() creates a theme using the University of British Columbia's visual identity
 to be used with ggplot2. See the visual identity at https://brand.ubc.ca/guidelines/downloads/ubc-colour-and-fonts/
 }
 \examples{
