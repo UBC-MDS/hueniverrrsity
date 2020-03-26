@@ -12,7 +12,7 @@ theme_alberta(colour_use, colour_palette)
 \item{colour_palette}{either 'alpha', 'beta', 'gamma' or 'delta' depending on which palette is selected.}
 }
 \value{
-reformatted plot with the University of Alberta's visual identity theme.
+Reformatted ggplot with the University of Alberta's visual identity theme.
 }
 \description{
 theme_alberta() creates a theme using the University of Alberta visual identity

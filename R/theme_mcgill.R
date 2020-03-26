@@ -5,7 +5,7 @@
 #' @description theme_mcgill() creates a theme using the McGill University's visual identity
 #' to be used with ggplot2. See the visual identity at https://www.mcgill.ca/visual-identity/visual-identity-guide
 #'
-#' @return reformatted plot with McGill University's visual identity theme.
+#' @return Reformatted ggplot with McGill University's visual identity theme.
 #' @export
 #'
 #' @examples
